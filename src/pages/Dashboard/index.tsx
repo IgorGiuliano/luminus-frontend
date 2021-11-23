@@ -104,18 +104,16 @@ const Dashboard: React.FC = () => {
         chartData: {
             labels: ['09/2021', '10/2021', '11/2021'],
             datasets: [{
-                type: 'bar',
-                label: 'Kwh (quilowatt-hora)',
-                data: [((threeMonthData / -1000.0).toFixed(2)), ((twoMonthData / -1000.0).toFixed(2)), ((lastMonthData / -1000.0).toFixed(2)),],
+                type: 'bar' as any,
+                label: 'Kwh (quilowatt-hora)' as any,
+                data: [((threeMonthData / -1000.0).toFixed(2)), ((twoMonthData / -1000.0).toFixed(2)), ((lastMonthData / -1000.0).toFixed(2)),] as any,
                 backgroundColor: [
                     'rgba(248, 210, 85, .78)'
-                    //'rgba(0, 0, 0, 1)',
-                ],
+                ] as any,
                 borderColor: [
                     'rgba(248, 210, 85, .0)'
-                    //'rgba(0, 0, 0, 1)',
-                ],
-                borderWidth: 1,
+                ] as any,
+                borderWidth: 1 as any,
             }]
         }
     };
@@ -159,7 +157,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <div className={styles.barChart}>
                     <Bar
-                        data={data.chartData}
+                        data = {data.chartData}
                         options={{
                             maintainAspectRatio: false,
                             responsive: true,
