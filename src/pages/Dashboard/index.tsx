@@ -51,16 +51,18 @@ const Dashboard: React.FC = () => {
             setThreeMonthData(result.data.three_month[0].three_month);
             setLastDayData(result.data.last_day[0].last_day);
             setEstado(result.data.estado.estado);
-            console.log(result)
-            if( result.data.estado.estado === 1 ) {
-                document.getElementById("button").innerHTML = "Apagar"
-                document.getElementById("button").style.backgroundColor = "rgba(248, 210, 85, 1)"
-                document.getElementById("button").style.color = "#121214"
-            } else if( result.data.estado.estado === 0 ) {
-                document.getElementById("button").innerHTML = "Acender"
-                document.getElementById("button").style.backgroundColor = "#121214"
-                document.getElementById("button").style.color = "#fff"
-                document.getElementById("button").style.border = "rgba(248, 210, 85, 1) solid 1px"
+            const button = window.document.getElementById("button")
+            if(button!=null){
+                if( result.data.estado.estado === 1 ) {
+                    button.innerHTML = "Apagar"
+                    button.style.backgroundColor = "rgba(248, 210, 85, 1)"
+                    button.style.color = "#121214"
+                } else if( result.data.estado.estado === 0 ) {
+                    button.innerHTML = "Acender"
+                    button.style.backgroundColor = "#121214"
+                    button.style.color = "#fff"
+                    button.style.border = "rgba(248, 210, 85, 1) solid 1px"
+                }
             }
         }
     }
