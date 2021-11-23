@@ -21,8 +21,14 @@ const Profile: React.FC = () => {
     }
 
     function showUser() {
-        document.getElementById("u").style.display = "flex";
-        document.getElementById("p").style.display = "none";
+        const u = window.document.getElementById("u")
+        const p = window.document.getElementById("p")
+        if(u!=null){
+            u.style.display = "flex";
+        }
+        if(p!=null){
+            p.style.display = "none";
+        }
     }
 
     async function getUserData(user_cod:string|null) {
@@ -47,8 +53,14 @@ const Profile: React.FC = () => {
     }
 
     function showPass() {
-        document.getElementById("u").style.display = "none";
-        document.getElementById("p").style.display = "flex";
+        const u = window.document.getElementById("u")
+        const p = window.document.getElementById("p")
+        if(u!=null){
+            u.style.display = "none";
+        }
+        if(p!=null){
+            p.style.display = "flex";
+        }
     }
 
     async function updatePass(event: FormEvent) {
